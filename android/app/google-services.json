@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "647930340970",
+    "project_id": "productmanager-2cb2f",
+    "storage_bucket": "productmanager-2cb2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647930340970:android:8101bb50f82153a7cd4c13",
+        "android_client_info": {
+          "package_name": "com.boilerplateredux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647930340970-bingkk67i1qfkb3cgtobgt6d66sdpbpe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.boilerplateredux",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "647930340970-b039dutjosbms2f2k6pll99ujo0aplrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArXGFXjL21_MQKCStA0-sHoAExw49-cds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647930340970-b039dutjosbms2f2k6pll99ujo0aplrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

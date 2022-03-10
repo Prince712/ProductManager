@@ -1,34 +1,45 @@
-import {REGISTER_USER,LOGIN_USER,UPDATE_USER_INFO,UPDATE_MAP_INFO, LOGOUT} from '../types';
+import {REGISTER_USER, GET_PRODUCTS, LOGOUT} from '../types';
+import axios from 'axios';
 
-export const registerUser = (data) => async (dispatch) => {
-    dispatch({
-      type: REGISTER_USER,
-      payload: data,
-    })
+export const registerUser = data => async dispatch => {
+  dispatch({
+    type: REGISTER_USER,
+    payload: data,
+  });
 };
 
-// export const loginUser = (data) => async (dispatch) => {
-//      dispatch({
-//         type: LOGIN_USER,
-//         payload: data,
-//       })
-//  };
+export const getProducts = () => async dispatch => {
+  let data = await axios
+    .get('https://shopping-backend-test.herokuapp.com/getProducts')
+    .then(responce => {
+      dispatch({
+        type: GET_PRODUCTS,
+        payload: responce.data,
+      });
+      return responce.data;
+    })
+    .catch(e => {
+      console.log(e);
+    });
+};
 
-//  export const updateUserInfo = (data) => async (dispatch) => {
-//   dispatch({
-//      type: UPDATE_USER_INFO,
-//      payload: data,
-//    })
-// };
-//  export const updateMapInfo = (data) => async (dispatch) => {
-//   dispatch({
-//      type: UPDATE_MAP_INFO,
-//      payload: data,
-//    })
-// };
-//  export const logout = (data) => async (dispatch) => {
-//   dispatch({
-//      type: LOGOUT,
-//      payload: data,
-//    })
-// };
+export const ProductAdd = params => async dispatch => {
+  let data = await axios
+    .post('https://shopping-backend-test.herokuapp.com/addProduct', params)
+    .then(responce => {
+      // dispatch({
+      //   type: ADD_PRODUCT,
+      //   payload: responce.data,
+      // })
+      return responce.data;
+    })
+    .catch(e => {
+      console.log(e);
+    });
+};
+
+export const logout = () => async dispatch => {
+  dispatch({
+    type: LOGOUT,
+  });
+};
