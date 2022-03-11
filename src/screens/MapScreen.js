@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View,StyleSheet} from 'react-native';
+import {View,StyleSheet,Platform} from 'react-native';
 import {
   Spinner,
   HStack,
@@ -16,7 +16,16 @@ export default function MapScreen({navigation}) {
   const [loading, setloading] = useState(true)
 
   useEffect(() => {
-    requestLocationPermission()
+   if(Platform === 'android') {requestLocationPermission()}
+      Geolocation.getCurrentPosition(info => {
+        // console.log(info);
+        let lat = info.coords.latitude;
+        let lon = info.coords.longitude;
+        setlatitude(lat ? lat : 37.78825);
+        setlongitude(lon ? lon : -122.4324);
+        setloading(false)
+      });
+
   }, []);
 
   async function requestLocationPermission() {
