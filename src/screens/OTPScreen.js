@@ -9,12 +9,8 @@ import {
 } from 'react-native';
 
 import {Styles} from './Styles';
-// import ErrorBoundary from './components/ErrorBoundry';
 import colors from '../utils/Colors';
-// import { isAndroid } from '../../utils/HelperFunctions';
-// import CustomText from './components/CustomText';
 import CustomTextInput from '../components/CustomTextInput';
-// import FullButtonComponent from './components/FullButtonComponent';
 import auth from '@react-native-firebase/auth';
 import {useDispatch, useSelector} from 'react-redux';
 import {registerUser} from '../redux/actions';
@@ -120,7 +116,6 @@ const OTPScreen = function ({
   };
 
   return (
-    // <ErrorBoundary screenName={'OTPScreen'}>
     <View style={styles.container}>
       <Text>Enter OTP sent to your{' ' + phoneNumber}</Text>
       <View style={[Styles.row, Styles.mt12]}>
@@ -156,13 +151,11 @@ const OTPScreen = function ({
       <Button
         type={'fill'}
         title={'Submit'}
-        textStyle={styles.submitButtonText}
-        buttonStyle={Styles.mt24}
+        style={[Styles.mt24,styles.submitButtonText]}
         onPress={() => confirmCode()}
         disabled={submittingOtp}
       />
     </View>
-    // </ErrorBoundary>
   );
 };
 
@@ -175,6 +168,7 @@ const styles = StyleSheet.create({
   },
   submitButtonText: {
     color: '#fff',
+    marginTop:20
   },
   otpText: {
     // color: colors.BLUE,
