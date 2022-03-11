@@ -22,6 +22,7 @@ export const Styles = StyleSheet.create({
   },
   mt12: {
     marginTop: 20,
+    marginBottom: 35
   },
   mt24: {
     marginTop: 20,

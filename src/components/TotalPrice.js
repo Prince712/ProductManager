@@ -24,7 +24,7 @@ export default function TotalPrice() {
   return (
     <Box bg={'violet.800'} width={'100%'} height={50} justifyContent={'center'}>
       <Text color={'#fff'} fontWeight={'medium'} ml={5}>
-        Total Amount: <Text fontWeight={'bold'}>{TotalPrice} </Text>
+        Total Amount: Rs. <Text fontWeight={'bold'}>{TotalPrice}  </Text>
       </Text>
     </Box>
   );

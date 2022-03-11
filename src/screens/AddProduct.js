@@ -107,7 +107,6 @@ export default function AddProduct() {
             lableValue={'Product Description'}
             defvalue={desc}
             placeholder="Enter Product Description"
-            keyboardType={'numeric'}
             onChangeText={value => setdesc(value)}
             InputLeftElement={
               <Icon

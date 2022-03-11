@@ -118,7 +118,7 @@ const OTPScreen = function ({
   return (
     <View style={styles.container}>
       <Text>Enter OTP sent to your{' ' + phoneNumber}</Text>
-      <View style={[Styles.row, Styles.mt12]}>
+      <View style={[Styles.row, Styles.mt12,]}>
         {[
           firstTextInputRef,
           secondTextInputRef,

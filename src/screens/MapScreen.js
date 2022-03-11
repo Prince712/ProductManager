@@ -1,21 +1,74 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View,StyleSheet} from 'react-native';
+import {
+  Spinner,
+  HStack,
+  Heading,
+  Center,
+} from 'native-base';
 import MapView from 'react-native-maps';
+import { PermissionsAndroid } from 'react-native';
 
 import Geolocation from '@react-native-community/geolocation';
-export default function MapScreen() {
-  const [latitude, setlatitude] = useState(37.78825);
-  const [longitude, setlongitude] = useState(-122.4324);
+export default function MapScreen({navigation}) {
+  const [latitude, setlatitude] = useState(0);
+  const [longitude, setlongitude] = useState(0);
+  const [loading, setloading] = useState(true)
 
   useEffect(() => {
-    Geolocation.getCurrentPosition(info => {
-      console.log(info);
-      let lat = info.coords.latitude;
-      let lon = info.coords.longitude;
-      setlatitude(lat ? lat : 37.78825);
-      setlongitude(lon ? lon : -122.4324);
-    });
+    requestLocationPermission()
   }, []);
+
+  async function requestLocationPermission() {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          'title': 'Location Permission',
+          'message': 'This App needs access to your location ' +
+                     'so we can know where you are.'
+        }
+      )
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          Geolocation.getCurrentPosition(
+            // info => {
+
+            ({ coords }) => {
+              console.log("coords: ", coords)
+              let lat = coords.latitude;
+            let lon = coords.longitude;
+            setlatitude(lat ? lat : 37.78825);
+            setlongitude(lon ? lon : -122.4324);
+            setloading(false)
+          },
+          (errObject) => {
+              console.log("message: ", errObject) // it gets thrown her
+              setlatitude(21.1702);
+              setlongitude(72.8311);
+              setloading(false)
+          }
+          );
+      } else {
+        console.log("Location permission denied")
+        navigation.goBack();
+      }
+    } catch (err) {
+      console.warn(err)
+    }
+  }
+
+  if (loading) {
+    return (
+      <Center flex={1} px="3">
+        <HStack space={2} justifyContent="center">
+          <Spinner accessibilityLabel="Loading posts" />
+          <Heading color="primary.500" fontSize="md">
+            Loading
+          </Heading>
+        </HStack>
+      </Center>
+    );
+  }
 
   return (
     <View style={styles.container}>
