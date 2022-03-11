@@ -5,7 +5,6 @@ use npm install
 then npm run ios 
 <br/>
 <br/>
- You can download Android App from here : https://drive.google.com/file/d/13dzb0r38rtdpiOVl4-aTuSuESETIYjgJ/view
 <br/>
 <b>Android  :</b> 
 <br/>
