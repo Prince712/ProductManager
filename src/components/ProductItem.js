@@ -10,11 +10,15 @@ import {
   Stack,
   NativeBaseProvider,
 } from 'native-base';
+import {
+  TouchableOpacity,
+} from 'react-native';
 
-const ProductItem = ({data}) => {
+const ProductItem = ({data,navigation}) => {
   let item = data;
   return (
     <Box alignItems="center" m={2}>
+      <TouchableOpacity  onPress={()=>navigation.navigate('MapScreen')}>     
       <Box
         maxW="100%"
         rounded="lg"
@@ -80,6 +84,7 @@ const ProductItem = ({data}) => {
           <Text fontWeight="400">{item.product_desc}</Text>
         </Stack>
       </Box>
+      </TouchableOpacity>
     </Box>
   );
 };

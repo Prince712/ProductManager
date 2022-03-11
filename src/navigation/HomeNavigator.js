@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Home from '../screens/Home';
 import AddProduct from '../screens/AddProduct';
+import MapScreen from '../screens/MapScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,11 @@ export default HomeNavigator = () => {
         name="AddProduct"
         component={AddProduct}
         options={{headerShown: true, headerTitle: 'Add Product'}}
+      />
+      <Stack.Screen
+        name="MapScreen"
+        component={MapScreen}
+        options={{headerShown: true, headerTitle: 'Your Location'}}
       />
     </Stack.Navigator>
   );

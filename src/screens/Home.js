@@ -26,8 +26,7 @@ import {getProducts, logout} from '../redux/actions';
 import ProductItem from '../components/ProductItem';
 import TotalPrice from '../components/TotalPrice';
 
-export default function Home({navigation, route}) {
-  console.log('hello', route);
+export default function Home({navigation}) {
   const dispatch = useDispatch();
   const GetProducts = () => dispatch(getProducts());
   const Logout = () => dispatch(logout());
@@ -84,7 +83,7 @@ export default function Home({navigation, route}) {
         <FlatList
           style={{marginTop: -40}}
           data={products}
-          renderItem={item => <ProductItem data={item.item} />}
+          renderItem={item => <ProductItem data={item.item} navigation={navigation} />}
           keyExtractor={item => item.product_id}
         />
       ) : (

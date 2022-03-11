@@ -1,13 +1,8 @@
 import React, {useState} from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Pressable,
-  Image,
-  TextInput,
-} from 'react-native';
+import {View, StyleSheet, Pressable, Image, TextInput} from 'react-native';
 import auth from '@react-native-firebase/auth';
+import FormButton from '../components/FormButton';
+import {Box, Text} from 'native-base';
 export default function Register({navigation}) {
   const [phoneNumber, addPhoneNumber] = useState('+918160736295');
 
@@ -18,7 +13,10 @@ export default function Register({navigation}) {
   };
 
   return (
-    <View style={styles.container}>
+    <Box flex={1} justifyContent={'center'} alignItems={'center'}>
+      <Text color="black" fontSize="25" fontWeight="bold" mb={10}>
+        Verify Your number
+      </Text>
       <TextInput
         value={phoneNumber}
         keyboardType={'number-pad'}
@@ -36,11 +34,11 @@ export default function Register({navigation}) {
         onPress={GetOTP}
         style={({pressed}) => ({
           ...styles.btnContainer,
-          backgroundColor: pressed ? 'white' : 'blue',
+          backgroundColor: pressed ? 'white' : '#8b5cf6',
         })}>
         <Text style={styles.btnText}>Get OTP!</Text>
       </Pressable>
-    </View>
+    </Box>
   );
 }
 
