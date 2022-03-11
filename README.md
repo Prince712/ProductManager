@@ -4,6 +4,9 @@ clone repo and
 use npm install
 then npm run ios 
 <br/>
+<br/>
+ You can download Android App from here : https://drive.google.com/file/d/13dzb0r38rtdpiOVl4-aTuSuESETIYjgJ/view
+<br/>
 <b>Android  :</b> 
 <br/>
 <img src="https://user-images.githubusercontent.com/36260086/157861942-4e2e3e09-c2cf-4b30-bb9e-6e746a5aa33d.jpeg" width="250">
