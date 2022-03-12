@@ -55,6 +55,11 @@ export default function MapScreen({navigation}) {
               setlatitude(21.1702);
               setlongitude(72.8311);
               setloading(false)
+          },
+          {
+            enableHighAccuracy: false,
+            timeout: 30000,
+            maximumAge: 3600000,
           }
           );
       } else {
