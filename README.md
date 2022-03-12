@@ -5,8 +5,11 @@ use npm install
 then npm run ios 
 <br/>
 <br/>
+ You can download Android App from here : https://drive.google.com/file/d/13dzb0r38rtdpiOVl4-aTuSuESETIYjgJ/view
+ Note : If Your map screen keeps loading try after turning on gps manually.
 <br/>
 <b>Android  :</b> 
+<br/>
 <br/>
 <img src="https://user-images.githubusercontent.com/36260086/157861942-4e2e3e09-c2cf-4b30-bb9e-6e746a5aa33d.jpeg" width="250">
 <img src="https://user-images.githubusercontent.com/36260086/157861973-bcc415c4-c55b-48c5-84ff-042b3b7775cf.jpeg" width="250">
